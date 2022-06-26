@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by Aman Yadav</title>
+    <title>Taco Cat: A Coding Project by Aman Yadav</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,7 +21,7 @@
 <!-- ==== Nav Section ==== -->
 <nav class="navbar navbar-expand-md navbar-light  fixed-top ">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">APP NAME</a>
+        <a class="navbar-brand" href="#">Taco Cat</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -50,8 +50,30 @@
 </nav>
 <!-- ==== Main Section ==== -->
 <main class="flex-shrink-0">
-    <div class="container">
+    <div class="container gy-4 mt-5">
+        <div class="row row-cols-1 row-cols-lg-2">
+            <div class="col">
+                <h3 class="display-5 fw-bold">Palindrome Check (aka. Taco Cat)</h3>
+                <p class="lead">Taco cat is a palindrome. A Palindrome is a word, phrase or sequence that reads the same backward as forward. Write a program that checks if the word entered is a palindrome.</p>
+            </div>
+            <div class="col">
+                <form>
+                    <div class="col-12">
+                   <p class="border-1 border-bottom border-success"> Enter a phrase or word to check</p>
+                    <input type="text" id="getString" class="form-control" placeholder="Enter a String">
+                </div>
+                <div class="col-12">
+                    <button type="button" class="btn btn-success mt-4" id="results">Check it Out!</button>
+                </div>
+                <div class="alert alert-success mt-5 invisible fade show" id="alert" role="alert">
+                    <h4 class="alert-heading" id="alertHeader">Result</h4>
+                    <p class="mb-0" id="msg">
 
+                    </p>
+                </div>
+                </form>
+            </div>
+        </div>
     </div>
 </main>
 <footer class="footer mt-auto py-3">
@@ -59,7 +81,7 @@
         <div class="row row-cols-1 row-cols-lg-3 gy-2">
             <div class="col order-last order-lg-first text-light">
                 <div>
-                    <span class="text-muted">&copy2022</span> Aman Yadav|amanpyadav15@gmail.com
+                    <span class="text-muted">&copy2022</span> Aman Yadav| amanpyadav15@gmail.com
                 </div>
             </div>
             <div class="col d-flex align-items-center justify-content-start justify-content-lg-center">
@@ -78,7 +100,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
 </script>
-
+<script>
+    document.getElementById("results").addEventListener("click",getString);
+</script>
 <script src="js/site.js"></script>
 </body>
 
