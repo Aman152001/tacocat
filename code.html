@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by Aman Yadav</title>
+    <title>Taco Cat: A Coding Project by Aman Yadav</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,7 +22,7 @@
 <!-- ==== Nav Section ==== -->
 <nav class="navbar navbar-expand-md navbar-light  fixed-top ">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">APP NAME</a>
+        <a class="navbar-brand" href="#">Taco Cat</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -56,16 +56,55 @@
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col-lg-8">
                 <pre class="line-numbers"><code class="language-javascript">
-                    //Call Hello World with alert!
-function HelloWorld(){
-    alert("Hello World!");
-}
+                    //gets the value from the page
+                    function getValue(){
+                        document.getElementById("alert").classList.add("invisible");
+                       let userString =  document.getElementById("userString").value;
+                       userString = userString.toLowerCase(userString);
+                       //remove space and special characters.
+                       let regex = /[^a-z0-9]/gi;
+                       userString = userString.replace(regex,"");
+                       let reverseString = revString(userString);
+                       display(reverseString,userString);
+                    }
+                    
+                    //gets the reverse string
+                    function revString(userString){
+                    
+                        let revString = [];
+                        for( let i =userString.length-1;i>=0;i--)
+                    {
+                        revString+=userString[i];
+                    } 
+                    
+                    return revString;
+                    }
+                    
+                    //checks if the given reverse string is same as user input string
+                    function display(reverseString,userString){
+                        if(reverseString==userString){
+                            document.getElementById("alert").classList.add("alert-success");
+                            document.getElementById("msg").innerHTML = `Congrats it's a palindrome!`;
+                            
+                            document.getElementById("alert").classList.remove("alert-danger");
+                        }
+                        else{
+                            document.getElementById("alert").classList.add("alert-danger");
+                            document.getElementById("msg").innerHTML = `Sorry it's not a palindrome!`;
+                            document.getElementById("alert").classList.remove("alert-success");
+                        }
+                        document.getElementById("alert").classList.remove("invisible");
+                    }
                 </code></pre>
             </div>
             <div class="col-lg-4">
-                <p> The Code is structure in one function.</p>
-                <h5>Hello World!</h5> 
-                <p> Hello world is function which displays an alert page page showing alert as hello world!</p>
+                <p> The Code is structure in three function.</p>
+                <h5 class="border-1 border-bottom border-success">getValue</h5> 
+                <p> The function <b>getValue</b> takes the input string from the user.</p>
+                <h5 class="border-1 border-bottom border-success">revString</h5> 
+                <p>The function <b> revString</b> reverse the input string and returns it.</p>
+                <h5 class="border-1 border-bottom border-success">display</h5>
+                <p> The function <b>display</b> checks the both revstring and userString if they are same or not. If they are same it will show the successfull msg in green box if not it will show the message in red box.</p>
             </div>
         </div>
     </div>
